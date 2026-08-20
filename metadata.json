@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "PCL One — Medical & Dental e-Rostering",
+  "description": "PCL One Medical & Dental e-Rostering system for NHS Foundation Trusts.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
