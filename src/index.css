@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* PCL One brand chrome — do not substitute a generic blue */
+  --color-pcl-blue: #005295;       /* top bar, primary buttons, active nav, links */
+  --color-pcl-blue-dark: #003e70;
+  --color-pcl-gold: #fdbb30;       /* accent stripe, highlights, CTA accents */
+  --color-pcl-green: #8dc63f;      /* sparing positive accent */
+  --color-pcl-charcoal: #302b28;   /* sign-in header, dark buttons */
+  --color-pcl-warm-bg: #fbf6f2;    /* springboard/home background */
+  --color-pcl-ink: #221f1d;
+  --color-pcl-muted: #6b6b6b;
+  --color-line: #d7dfe4;
+  --color-surface: #ffffff;
+
+  /* RAG / status colours — separate system, used only for KPI + compliance badges */
+  --color-status-green: #2e7d32;
+  --color-status-amber: #ee7c00;
+  --color-status-red: #c62828;
+
+  --font-sans: "Segoe UI", Arial, sans-serif;
+  --font-serif: Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply text-pcl-ink bg-white font-sans;
+    font-size: 14px;
+  }
+  .tabular { font-variant-numeric: tabular-nums; }
+}
+
+@layer components {
+  .pcl-panel { @apply bg-white border border-line rounded-none; }
+  .pcl-panel-header { @apply h-12 flex items-center justify-between px-5 border-b border-line font-semibold text-pcl-ink; }
+  .pcl-table { @apply w-full text-sm; }
+  .pcl-table th { @apply text-left text-xs uppercase tracking-wide text-pcl-muted border-b border-line py-2 px-3; }
+  .pcl-table td { @apply border-b border-line py-2 px-3 tabular-nums; }
+  .pcl-tabs { @apply flex items-center gap-6 border-b border-line text-sm text-pcl-muted px-5; }
+  .pcl-tabs .active { @apply text-pcl-blue border-b-2 border-pcl-blue; }
+  .btn-primary { @apply bg-pcl-blue text-white px-4 py-2 text-sm font-semibold hover:bg-pcl-blue-dark transition-colors; }
+  .btn-gold { @apply bg-pcl-gold text-pcl-charcoal px-4 py-2 text-sm font-semibold; }
+  .status-chip { @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded-sm; }
+  .status-green { @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded-sm; background: color-mix(in srgb, var(--color-status-green) 12%, white); color: var(--color-status-green); }
+  .status-amber { @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded-sm; background: color-mix(in srgb, var(--color-status-amber) 12%, white); color: var(--color-status-amber); }
+  .status-red { @apply inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded-sm; background: color-mix(in srgb, var(--color-status-red) 12%, white); color: var(--color-status-red); }
+}
